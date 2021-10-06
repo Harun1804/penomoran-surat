@@ -45,12 +45,12 @@
                     <div class="collapse" id="dashboard">
                         <ul class="nav nav-collapse">
                             <li>
-                                <a href="#">
+                                <a href="{{ route('admin.restart') }}">
                                     <span class="sub-item">Restart Penomoran</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{ route('admin.history') }}">
                                     <span class="sub-item">History Penomoran</span>
                                 </a>
                             </li>

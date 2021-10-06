@@ -24,6 +24,9 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('dashboard',[AdminController::class,'dashboard'])->name('dashboard');
         Route::get('users',[AdminController::class,'users'])->name('users');
+        Route::get('penomoran/restart',[AdminController::class,'restart'])->name('restart');
+        Route::put('penomoran/update',[AdminController::class,'updateNoUrut'])->name('update.no.urut');
+        Route::get('penomoran/history',[AdminController::class,'history'])->name('history');
     });
 
     Route::prefix('staff')->name('staff.')->group(function () {

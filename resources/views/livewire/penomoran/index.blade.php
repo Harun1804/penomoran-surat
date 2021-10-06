@@ -17,7 +17,7 @@
         <div class="card">
             <div class="card-header">
                 <div class="card-title">
-                    Penomoran Surat Atau Memo @json($editMode)
+                    Penomoran Surat Atau Memo
                     <div class="float-right">
                         <button class="btn btn-sm btn-primary" wire:click="create">Single Input</button>
                     </div>
