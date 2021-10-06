@@ -22,21 +22,21 @@
                     <h4 class="text-section">Menu</h4>
                 </li>
                 @if (auth()->user()->role == "admin")
-                <li class="nav-item @if(Request::segment(2) == " dashboard") active @endif">
+                <li class="nav-item @if(Request::segment(2) == "dashboard") active @endif">
                     <a href="{{ route('admin.dashboard') }}">
                         <i class="fas fa-desktop"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
 
-                <li class="nav-item @if(Request::segment(2) == " users") active @endif">
+                <li class="nav-item @if(Request::segment(2) == "users") active @endif">
                     <a href="{{ route('admin.users') }}">
                         <i class="fas fa-desktop"></i>
                         <p>Kelola User</p>
                     </a>
                 </li>
 
-                <li class="nav-item @if(Request::segment(2) == " penomoran") active @endif">
+                <li class="nav-item @if(Request::segment(2) == "penomoran") active @endif">
                     <a data-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
                         <i class="fas fa-home"></i>
                         <p>Penomoran</p>
@@ -59,6 +59,20 @@
                 </li>
                 @endif
 
+                @if (auth()->user()->role == "staff")
+                <li class="nav-item @if(Request::segment(2) == "dashboard") active @endif">
+                    <a href="{{ route('staff.dashboard') }}">
+                        <i class="fas fa-desktop"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li class="nav-item @if(Request::segment(2) == "penomoran") active @endif">
+                    <a href="{{ route('staff.penomoran') }}">
+                        <i class="fas fa-desktop"></i>
+                        <p>Penomoran</p>
+                    </a>
+                </li>
+                @endif
             </ul>
         </div>
     </div>

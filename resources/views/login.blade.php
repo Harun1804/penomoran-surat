@@ -32,6 +32,12 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
+				@if (session('failed'))
+					<div class="alert alert-danger">{{ session('failed') }}</div>
+				@endif
+				@if (session('success'))
+					<div class="alert alert-success">{{ session('success') }}</div>
+				@endif
 				<div class="login100-form-title" style="background-image: url({{ asset('assets/auth/images/bg-01.jpg') }});">
 					<span class="login100-form-title-1">
 						Sign In
@@ -48,7 +54,7 @@
 
 					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
 						<span class="label-input100">Password</span>
-						<input class="input100" type="password" name="pass" placeholder="Enter password" name="password">
+						<input class="input100" type="password" name="password" placeholder="Enter password" name="password">
 						<span class="focus-input100"></span>
 					</div>
 

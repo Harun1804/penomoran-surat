@@ -14,13 +14,16 @@ class AuthController extends Controller
 
     public function verifyLogin(Request $request)
     {
-        if (Auth::attempt(['username' => $request->username, 'password' => $request->username])) {
+        if (Auth::attempt(['username' => $request->username, 'password' => $request->password])) {
             $request->session()->regenerate();
             if(Auth::user()->role == "admin"){
                 return redirect()->route('admin.dashboard');
+            }else{
+                return redirect()->route('staff.dashboard');
             }
+        }else{
+            return redirect()->back()->with('failed','Gagal Login Cek Kembali Username dan Password Anda!!!');
         }
-        return redirect()->back()->with('failed','Gagal Login Cek Kembali Username dan Password Anda!!!');
     }
 
     public function logout(Request $request)
