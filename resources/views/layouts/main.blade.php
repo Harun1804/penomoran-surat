@@ -33,6 +33,14 @@
 
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link rel="stylesheet" href="{{ asset('assets/css/demo.css') }}">
+    @livewireStyles
+    @yield('css-vendor')
+    @yield('css-script')
+    <style>
+        .null-data {
+            text-align: center
+        }
+    </style>
 </head>
 
 <body data-background-color="dark">
@@ -110,6 +118,11 @@
 
     <!-- Atlantis JS -->
     <script src="{{ asset('assets/js/atlantis.min.js') }}"></script>
+    <script src="{{ asset('assets/js/myScript.js') }}"></script>
+    @livewireScripts
+    @yield('model')
+    @yield('js-vendor')
+    @yield('js-script')
 </body>
 
 </html>

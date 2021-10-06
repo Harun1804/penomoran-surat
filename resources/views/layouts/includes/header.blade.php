@@ -36,8 +36,8 @@
                                 <div class="user-box">
                                     <div class="avatar-lg"><img src="{{ asset('assets/img/profile.jpg') }}" alt="image profile" class="avatar-img rounded"></div>
                                     <div class="u-text">
-                                        <h4>Hizrian</h4>
-                                        <p class="text-muted">hello@example.com</p>
+                                        <h4>{{ auth()->user()->username }}</h4>
+                                        <p class="text-muted">{{ auth()->user()->email }}</p>
                                     </div>
                                 </div>
                             </li>
@@ -45,7 +45,7 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Ubah Password</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Logout</a>
+                                <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
                             </li>
                         </div>
                     </ul>

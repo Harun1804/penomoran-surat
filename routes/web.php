@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('login');
+Route::get('/', [AuthController::class,'index'])->name('login');
+Route::post('/verify', [AuthController::class,'verifyLogin'])->name('verify.login');
+Route::get('logout', [AuthController::class,'logout'])->name('logout');
+
+Route::middleware(['auth'])->group(function () {
+    Route::prefix('admin')->name('admin.')->group(function () {
+        Route::get('dashboard',[AdminController::class,'dashboard'])->name('dashboard');
+        Route::get('users',[AdminController::class,'users'])->name('users');
+    });
 });
