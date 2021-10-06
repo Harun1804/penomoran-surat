@@ -4,7 +4,11 @@
             @if ($editMode)
                 @include('livewire.penomoran.edit')
             @else
-                @include('livewire.penomoran.create')
+                @if ($bulkInsert)
+                    @include('livewire.penomoran.bulk')
+                @else
+                    @include('livewire.penomoran.create')
+                @endif
             @endif
         </div>
     @endif
@@ -20,6 +24,7 @@
                     Penomoran Surat Atau Memo
                     <div class="float-right">
                         <button class="btn btn-sm btn-primary" wire:click="create">Single Input</button>
+                        <button class="btn btn-sm btn-warning" wire:click="bulkCreate">Bulk Input</button>
                     </div>
                 </div>
             </div>

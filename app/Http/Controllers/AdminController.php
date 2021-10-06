@@ -11,7 +11,8 @@ class AdminController extends Controller
     public function dashboard()
     {
         $users = User::count();
-        return view('admin.dashboard',compact('users'));
+        $surat = Nomor::count();
+        return view('admin.dashboard',compact(['users','surat']));
     }
 
     public function users()
