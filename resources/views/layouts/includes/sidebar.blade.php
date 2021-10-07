@@ -73,11 +73,27 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
+
                 <li class="nav-item @if(Request::segment(2) == "penomoran") active @endif">
-                    <a href="{{ route('staff.penomoran') }}">
+                    <a data-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
                         <i class="fas fa-envelope"></i>
                         <p>Penomoran</p>
+                        <span class="caret"></span>
                     </a>
+                    <div class="collapse" id="dashboard">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="{{ route('staff.penomoran') }}">
+                                    <span class="sub-item">Surat</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('staff.penomoran.memo') }}">
+                                    <span class="sub-item">Memo</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
                 @endif
             </ul>

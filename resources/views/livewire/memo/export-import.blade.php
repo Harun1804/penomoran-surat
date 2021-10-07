@@ -17,7 +17,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title">
-                            Import Penomoran Surat
+                            Import Penomoran Memo
                         </div>
                     </div>
                     <div class="card-body">
@@ -31,8 +31,8 @@
                         </form>
                     </div>
                     <div class="card-action">
-                        <a class="btn btn-sm btn-info" download href="{{ asset('file/contohXLSX.xlsx') }}">Download Contoh Template Import XLSX</a>
-                        <a class="btn btn-sm btn-secondary" download href="{{ asset('file/contohCSV.csv') }}">Download Contoh Template Import CSV</a>
+                        <a class="btn btn-sm btn-info" download href="{{ asset('file/contohmemoXLSX.xlsx') }}">Download Contoh Template Import XLSX</a>
+                        <a class="btn btn-sm btn-secondary" download href="{{ asset('file/contohmemoCSV.csv') }}">Download Contoh Template Import CSV</a>
                     </div>
                 </div>
             @endif
@@ -42,7 +42,7 @@
         <div class="card">
             <div class="card-header">
                 <div class="card-title">
-                    Export / Import Penomoran Surat
+                    Export / Import Penomoran Memo
                     <div class="float-right">
                         <button class="btn btn-sm btn-success" wire:click="importForm">Import</button>
                         <button class="btn btn-sm btn-info" wire:click="exportForm">Export</button>
@@ -67,10 +67,10 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $s->kode }}</td>
-                                <td>{{ $s->tanggal_surat }}</td>
+                                <td>{{ $s->tanggal_memo }}</td>
                                 <td>{{ $s->keterangan }}</td>
                                 <td>{{ $s->tujuan }}</td>
-                                <td>{{ $s->jenis_surat }}</td>
+                                <td>{{ $s->jenis_memo }}</td>
                             </tr>
                             @empty
                             <tr>

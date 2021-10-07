@@ -2,12 +2,12 @@
     @if ($form)
     <div class="col-md-12">
         @if ($editMode)
-        @include('livewire.penomoran.edit')
+        @include('livewire.memo.edit')
         @else
         @if ($bulkInsert)
-        @include('livewire.penomoran.bulk')
+        @include('livewire.memo.bulk')
         @else
-        @include('livewire.penomoran.create')
+        @include('livewire.memo.create')
         @endif
         @endif
     </div>
@@ -21,7 +21,7 @@
         <div class="card">
             <div class="card-header">
                 <div class="card-title">
-                    Penomoran Surat
+                    Penomoran Memo
                     <div class="float-right">
                         <button class="btn btn-sm btn-info" wire:click="toExportImport">Export/Import</button>
                         <button class="btn btn-sm btn-primary" wire:click="create">Single Input</button>
@@ -37,10 +37,10 @@
                                 <th scope="col">#</th>
                                 <th scope="col">Action</th>
                                 <th scope="col">Kode</th>
-                                <th scope="col">Tanggal Surat</th>
+                                <th scope="col">Tanggal Memo</th>
                                 <th scope="col">Keterangan</th>
                                 <th scope="col">Tujuan</th>
-                                <th scope="col">Jenis Surat</th>
+                                <th scope="col">Jenis Memo</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -51,10 +51,10 @@
                                     <button class="btn btn-warning" wire:click="edit({{ $s->id }})">Edit</button>
                                 </td>
                                 <td>{{ $s->kode }}</td>
-                                <td>{{ $s->tanggal_surat }}</td>
+                                <td>{{ $s->tanggal_memo }}</td>
                                 <td>{{ $s->keterangan }}</td>
                                 <td>{{ $s->tujuan }}</td>
-                                <td>{{ $s->jenis_surat }}</td>
+                                <td>{{ $s->jenis_memo }}</td>
                             </tr>
                             @empty
                             <tr>

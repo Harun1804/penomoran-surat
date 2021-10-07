@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Nomor;
+use App\Models\Memo;
 use App\Models\User;
+use App\Models\Nomor;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -12,7 +13,8 @@ class AdminController extends Controller
     {
         $users = User::count();
         $surat = Nomor::count();
-        return view('admin.dashboard',compact(['users','surat']));
+        $memo = Memo::count();
+        return view('admin.dashboard',compact(['users','surat','memo']));
     }
 
     public function users()
@@ -27,12 +29,24 @@ class AdminController extends Controller
 
     public function updateNoUrut(Request $request)
     {
-        $noUrutAkhir = Nomor::orderBy('created_at','desc')->first();
-        $noUrutAkhir->update([
-            'no_urut' => $request->no_urut
+        $request->validate([
+            'jenis' => 'required',
+            'no_urut' => 'required'
         ]);
 
-        return redirect()->back()->with('success','No Urut Berhasil Direset');
+        if($request->jenis == "surat"){
+            $noUrutAkhir = Nomor::orderBy('id','desc')->first();
+            $noUrutAkhir->update([
+                'no_urut' => $request->no_urut
+            ]);
+        }else{
+            $noUrutAkhir = Memo::orderBy('id','desc')->first();
+            $noUrutAkhir->update([
+                'no_urut' => $request->no_urut
+            ]);
+        }
+
+        return redirect()->back()->with('success','No Urut '.ucfirst($request->jenis).' Berhasil Direset');
     }
 
     public function history()
