@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="{{ asset('assets/auth/images/icons/favicon.ico') }}"/>
+	<link rel="icon" type="image/png" href="{{ asset('img/icon.ico') }}"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/auth/vendor/bootstrap/css/bootstrap.min.css') }}">
 <!--===============================================================================================-->
@@ -38,7 +38,7 @@
 				@if (session('success'))
 					<div class="alert alert-success">{{ session('success') }}</div>
 				@endif
-				<div class="login100-form-title" style="background-image: url({{ asset('assets/auth/images/bg-01.jpg') }});">
+				<div class="login100-form-title" style="background-image: url({{ asset('img/bg-01.jpg') }});">
 					<span class="login100-form-title-1">
 						Sign In
 					</span>
