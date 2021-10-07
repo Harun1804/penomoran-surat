@@ -28,6 +28,15 @@ class User extends Component
         return view('livewire.user.index',compact('users'));
     }
 
+    public function resetInput()
+    {
+        $this->username = null;
+        $this->email = null;
+        $this->password = null;
+        $this->cpassword = null;
+        $this->role = null;
+    }
+
     public function create()
     {
         $this->form = true;
@@ -45,6 +54,7 @@ class User extends Component
         ]);
 
         $this->form = false;
+        $this->resetInput();
         session()->flash('success','User Telah Dibuat');
     }
 
@@ -79,6 +89,7 @@ class User extends Component
         
         $this->editMode = false;
         $this->form = false;
+        $this->resetInput();
         session()->flash('success','User Telah Diperbaharui');
     }
 
