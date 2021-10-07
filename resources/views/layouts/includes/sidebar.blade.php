@@ -57,6 +57,13 @@
                         </ul>
                     </div>
                 </li>
+
+                <li class="nav-item @if(Request::segment(2) == "bglogin") active @endif">
+                    <a href="{{ route('admin.ubah.Bg.Login') }}">
+                        <i class="fas fa-file-image"></i>
+                        <p>Ubah Background Login</p>
+                    </a>
+                </li>
                 @endif
 
                 @if (auth()->user()->role == "staff")

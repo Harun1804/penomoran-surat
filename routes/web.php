@@ -28,6 +28,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('penomoran/restart',[AdminController::class,'restart'])->name('restart');
         Route::put('penomoran/update',[AdminController::class,'updateNoUrut'])->name('update.no.urut');
         Route::get('penomoran/history',[AdminController::class,'history'])->name('history');
+        Route::get('bglogin',[AdminController::class,'ubahBgLogin'])->name('ubah.Bg.Login');
+        Route::post('bglogin',[AdminController::class,'updateBackground'])->name('update.Bg.Login');
     });
 
     Route::prefix('staff')->name('staff.')->group(function () {
