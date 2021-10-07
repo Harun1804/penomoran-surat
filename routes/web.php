@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,5 +34,10 @@ Route::middleware(['auth'])->group(function () {
         Route::get('dashboard',[StaffController::class,'dashboard'])->name('dashboard');
         Route::get('penomoran',[StaffController::class,'penomoran'])->name('penomoran');
         Route::get('penomoran/export-import',[StaffController::class,'exportimport'])->name('exportimport');
+    });
+
+    Route::prefix('user')->name('user.')->group(function () {
+        Route::get('ubah-password',[UserController::class,'ubahPasword'])->name('ubah.password');
+        Route::put('ubah-passwrod',[UserController::class,'update'])->name('update');
     });
 });
