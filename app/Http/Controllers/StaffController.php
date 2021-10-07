@@ -15,4 +15,9 @@ class StaffController extends Controller
     {
         return view('staff.penomoran');
     }
+
+    public function exportimport()
+    {
+        return view('staff.exportimport');
+    }
 }

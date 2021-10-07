@@ -22,8 +22,8 @@ class Nomor extends Model
 
     public static function generateKode()
     {
-        $noUrutAkhir = Nomor::orderBy('created_at','desc')->first();
-        if(empty($noUrutAkhir->no_urut)){
+        $noUrutAkhir = Nomor::orderBy('id','desc')->first();
+        if($noUrutAkhir == null){
             return '00001';
         }else{
             return sprintf("%05s",abs($noUrutAkhir->no_urut + 1));
@@ -32,8 +32,12 @@ class Nomor extends Model
 
     public static function incrementNoUrut()
     {
-        $noUrutAkhir = Nomor::orderBy('created_at','desc')->first();
-        return $noUrutAkhir->no_urut + 1;
+        $noUrutAkhir = Nomor::orderBy('id','desc')->first();
+        if ($noUrutAkhir == null) {
+            return 0;
+        }else{
+            return $noUrutAkhir->no_urut + 1;
+        }
     }
 
     public function user()

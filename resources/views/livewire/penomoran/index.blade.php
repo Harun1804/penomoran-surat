@@ -1,21 +1,21 @@
 <div class="row">
     @if ($form)
-        <div class="col-md-12">
-            @if ($editMode)
-                @include('livewire.penomoran.edit')
-            @else
-                @if ($bulkInsert)
-                    @include('livewire.penomoran.bulk')
-                @else
-                    @include('livewire.penomoran.create')
-                @endif
-            @endif
-        </div>
+    <div class="col-md-12">
+        @if ($editMode)
+        @include('livewire.penomoran.edit')
+        @else
+        @if ($bulkInsert)
+        @include('livewire.penomoran.bulk')
+        @else
+        @include('livewire.penomoran.create')
+        @endif
+        @endif
+    </div>
     @endif
     @if (session('success'))
-        <div class="col-md-12">
-            <div class="alert alert-success">{{ session('success') }}</div>
-        </div>
+    <div class="col-md-12">
+        <div class="alert alert-success">{{ session('success') }}</div>
+    </div>
     @endif
     <div class="col-md-12">
         <div class="card">
@@ -23,6 +23,7 @@
                 <div class="card-title">
                     Penomoran Surat Atau Memo
                     <div class="float-right">
+                        <button class="btn btn-sm btn-info" wire:click="toExportImport">Export/Import</button>
                         <button class="btn btn-sm btn-primary" wire:click="create">Single Input</button>
                         <button class="btn btn-sm btn-warning" wire:click="bulkCreate">Bulk Input</button>
                     </div>
@@ -44,21 +45,21 @@
                         </thead>
                         <tbody>
                             @forelse ($surat as $s)
-                                <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td>
-                                        <button class="btn btn-warning" wire:click="edit({{ $s->id }})">Edit</button>
-                                    </td>
-                                    <td>{{ $s->kode }}</td>
-                                    <td>{{ $s->tanggal_surat }}</td>
-                                    <td>{{ $s->keterangan }}</td>
-                                    <td>{{ $s->tujuan }}</td>
-                                    <td>{{ $s->jenis_surat }}</td>
-                                </tr>
+                            <tr>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>
+                                    <button class="btn btn-warning" wire:click="edit({{ $s->id }})">Edit</button>
+                                </td>
+                                <td>{{ $s->kode }}</td>
+                                <td>{{ $s->tanggal_surat }}</td>
+                                <td>{{ $s->keterangan }}</td>
+                                <td>{{ $s->tujuan }}</td>
+                                <td>{{ $s->jenis_surat }}</td>
+                            </tr>
                             @empty
-                                <tr>
-                                    <td class="null-data" colspan="7">Belum Ada Data</td>
-                                </tr>
+                            <tr>
+                                <td class="null-data" colspan="7">Belum Ada Data</td>
+                            </tr>
                             @endforelse
                         </tbody>
                     </table>

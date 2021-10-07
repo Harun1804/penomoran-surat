@@ -32,5 +32,6 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('staff')->name('staff.')->group(function () {
         Route::get('dashboard',[StaffController::class,'dashboard'])->name('dashboard');
         Route::get('penomoran',[StaffController::class,'penomoran'])->name('penomoran');
+        Route::get('penomoran/export-import',[StaffController::class,'exportimport'])->name('exportimport');
     });
 });

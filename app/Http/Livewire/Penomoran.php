@@ -120,4 +120,9 @@ class Penomoran extends Component
         $this->editMode = false;
         $this->resetInput();
     }
+
+    public function toExportImport()
+    {
+        return redirect()->route('staff.exportimport');
+    }
 }
