@@ -24,21 +24,21 @@
                 @if (auth()->user()->role == "admin")
                 <li class="nav-item @if(Request::segment(2) == "dashboard") active @endif">
                     <a href="{{ route('admin.dashboard') }}">
-                        <i class="fas fa-desktop"></i>
+                        <i class="fas fa-home"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
 
                 <li class="nav-item @if(Request::segment(2) == "users") active @endif">
                     <a href="{{ route('admin.users') }}">
-                        <i class="fas fa-desktop"></i>
+                        <i class="fas fa-users"></i>
                         <p>Kelola User</p>
                     </a>
                 </li>
 
                 <li class="nav-item @if(Request::segment(2) == "penomoran") active @endif">
                     <a data-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
-                        <i class="fas fa-home"></i>
+                        <i class="fas fa-envelope"></i>
                         <p>Penomoran</p>
                         <span class="caret"></span>
                     </a>
@@ -62,13 +62,13 @@
                 @if (auth()->user()->role == "staff")
                 <li class="nav-item @if(Request::segment(2) == "dashboard") active @endif">
                     <a href="{{ route('staff.dashboard') }}">
-                        <i class="fas fa-desktop"></i>
+                        <i class="fas fa-home"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li class="nav-item @if(Request::segment(2) == "penomoran") active @endif">
                     <a href="{{ route('staff.penomoran') }}">
-                        <i class="fas fa-desktop"></i>
+                        <i class="fas fa-envelope"></i>
                         <p>Penomoran</p>
                     </a>
                 </li>
