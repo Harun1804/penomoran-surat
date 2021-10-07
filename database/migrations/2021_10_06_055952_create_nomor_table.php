@@ -34,6 +34,7 @@ class CreateNomorTable extends Migration
             'keterangan' => '0',
             'tujuan' => '0',
             'jenis_surat' => '0',
+            'user_id' => 1
         ]);
     }
 
