@@ -34,7 +34,7 @@
                         <div class="dropdown-user-scroll scrollbar-outer">
                             <li>
                                 <div class="user-box">
-                                    <div class="avatar-lg"><img src="{{ asset('assets/img/profile.jpg') }}" alt="image profile" class="avatar-img rounded"></div>
+                                    <div class="avatar-lg"><img src="{{ asset('img/default.png') }}" alt="image profile" class="avatar-img rounded"></div>
                                     <div class="u-text">
                                         <h4>{{ auth()->user()->username }}</h4>
                                         <p class="text-muted">{{ auth()->user()->email }}</p>
