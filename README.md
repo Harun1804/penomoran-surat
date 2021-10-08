@@ -20,6 +20,16 @@ git clone https://github.com/Harun1804/penomoran-surat.git
 cd penomoran-surat
 ```
 
+# Tutorial Download & Instalasi XAMPP
+
+1. Download Xampp Terlebih Dahulu <br>
+   [Download disini](https://www.apachefriends.org/download.html)
+2. Install Xampp Yang Sudah Didownload
+3. Klik Next Hingga Finish
+4. Sebelum Menekan Finish Jangan Lupa Centang Start Xampp Control Panel
+5. Muncul Aplikasi Xampp
+6. Tekan Start Pada Apache dan MySQL
+
 # Tutorial Penggunaan & Konfigurasi Laravel
 
 1. Install Composer Terlebih Dahulu <br>
