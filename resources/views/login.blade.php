@@ -17,7 +17,7 @@
 		}
 
 		body,html {
-			background-image: url('{{ asset('img/bg-01.jpg') }}');
+			background-image: url('{{ asset('img/bg-01.jpg?$server') }}');
 			height: 100%;
 		}
 
